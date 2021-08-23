@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="guru.bug.bullsandcows.MainScreenController"
+            prefHeight="400.0" prefWidth="600.0">
+    <top>
+        <HBox>
+            <Spinner fx:id="numSpinner1" min="0" max="9" initialValue="5" editable="true" prefWidth="50"/>
+            <Spinner fx:id="numSpinner2" min="0" max="9" initialValue="5" editable="true" prefWidth="50"/>
+            <Spinner fx:id="numSpinner3" min="0" max="9" initialValue="5" editable="true" prefWidth="50"/>
+            <Spinner fx:id="numSpinner4" min="0" max="9" initialValue="5" editable="true" prefWidth="50"/>
+            <Button text="Go" prefWidth="50" onAction="#doTurn"/>
+        </HBox>
+    </top>
+    <center>
+        <TableView>
+            <columns>
+                <TableColumn text="Nr"/>
+                <TableColumn text="Guess"/>
+                <TableColumn text="Bulls"/>
+                <TableColumn text="Cows"/>
+            </columns>
+        </TableView>
+    </center>
+</BorderPane>
