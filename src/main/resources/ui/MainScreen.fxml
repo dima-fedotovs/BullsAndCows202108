@@ -6,6 +6,7 @@
 <?import javafx.scene.control.Spinner?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
 <BorderPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="guru.bug.bullsandcows.MainScreenController"
@@ -16,16 +17,35 @@
             <Spinner fx:id="numSpinner2" min="0" max="9" initialValue="5" editable="true" prefWidth="50"/>
             <Spinner fx:id="numSpinner3" min="0" max="9" initialValue="5" editable="true" prefWidth="50"/>
             <Spinner fx:id="numSpinner4" min="0" max="9" initialValue="5" editable="true" prefWidth="50"/>
-            <Button text="Go" prefWidth="50" onAction="#doTurn"/>
+            <Button fx:id="goButton" text="Go" prefWidth="50" onAction="#doTurn"/>
         </HBox>
     </top>
     <center>
-        <TableView>
+        <TableView fx:id="turnTable">
             <columns>
-                <TableColumn text="Nr"/>
-                <TableColumn text="Guess"/>
-                <TableColumn text="Bulls"/>
-                <TableColumn text="Cows"/>
+                <TableColumn text="Nr">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="nr"/>
+                    </cellValueFactory>
+                </TableColumn>
+
+                <TableColumn text="Guess">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="guess"/>
+                    </cellValueFactory>
+                </TableColumn>
+
+                <TableColumn text="Bulls">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="bulls"/>
+                    </cellValueFactory>
+                </TableColumn>
+
+                <TableColumn text="Cows">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="cows"/>
+                    </cellValueFactory>
+                </TableColumn>
             </columns>
         </TableView>
     </center>
